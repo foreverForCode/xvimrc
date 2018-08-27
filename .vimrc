@@ -10,7 +10,7 @@ set ignorecase " 搜索忽略大小写
 set hlsearch
 set incsearch
 set guifont=DejaVu_Sans_Mono:h14:cDEFAULT " 设置字体
-set fileencoding=utf-8"设置文件字体格式
+set fileencoding=utf-8 "设置文件字体格式
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 set backspace=indent,eol,start  "解决window backspace失效问题
 set autoindent"自动缩进
@@ -20,9 +20,9 @@ set fdm=marker " 代码折叠
 set shortmess=atI
 set smartindent "智能选择对齐方式
 set cindent" c缩进
-set nobackup"去除备份
-set autochdir"自动切换目录
-
+set nobackup "去除备份
+set autochdir "自动切换目录
+set cursorline
 "=============vundle的配置内容===========================
 " set the runtime path to include Vundle and initialize
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim
@@ -34,6 +34,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin '907th/vim-auto-save'
+Plugin 'mattn/emmet-vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -95,7 +96,7 @@ let g:auto_save_write_all_buffers = 1
 
 "================键盘映射==================
 map <F3> "+gP<cr>
-map <F4> "+y<cr>
+"map <F4> "+y<cr>
 map <F5> :e ~/.vimrc<cr>
 map <F6> :ToggleBufExplorer<cr>
 map <F7> :source ~\.vimrc<cr>
@@ -112,3 +113,8 @@ let g:DoxygenToolkit_authorName="freewm@163.com"
 "===================代码自动补全=========
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_auto_select = 1
+"==================emmet=================
+let g:user_emmet_leader_key='<C-z>'
+"======================================
+map <F4> :let @a=expand('%:p')<cr>
+C:\Users\Administrator\.vimrc
